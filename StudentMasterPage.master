@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="StudentMasterPage.master.cs"
+    Inherits="student_StudentMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="Styles/styles.css" type="text/css" />
+    <%--  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../Scripts/script.js" type="text/javascript"> </script>--%>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div>
+            <center>
+                <h1>
+                    <b style="font-family: 'Bodoni MT Black'; font-size: x-large; font-weight: 100; font-style: normal;
+                        color: #50A4A2;">HARE KRISHNA DIAMOND INSTITUTE</b>
+                </h1>
+            </center>
+            <asp:Button runat="server" ID="btnLogout" Text="Logout" OnClick="btnLogout_Click" Style="margin-left: 95%;
+                margin-top: -1%;" BackColor="WhiteSmoke" BorderStyle="None" ForeColor="#B7D7EE" />
+        </div>
+        <div id='cssmenu' style="background-color: #50A4A2; color: #800000;">
+            <ul>
+                <li><a href="StudentDashboard.aspx">Dashboard</a></li>
+                <li><a href="#">Academics Record</a></li>
+                <li><a href="#">Study Materials</a></li>
+                <li><a href="LeaveNotification.aspx">Request Leave</a></li>
+                <li><a href='#'>Request Jump</a></li>
+                <li><a href='#'>Contact</a></li>
+            </ul>
+        </div>
+        <hr />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

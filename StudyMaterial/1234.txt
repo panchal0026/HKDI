@@ -1,0 +1,76 @@
+  public DataSet GetStudentbyFacultyID(int fac_ID) 
+    {
+        SqlParameter[] sp = new SqlParameter[1];
+        sp[0] = new SqlParameter("@Faculty_ID", fac_ID);
+        return datalayer.get_data("sp_GetStudentbyFacultyID", CommandType.StoredProcedure, sp);
+    }
+
+    public DataSet getFacultyIDbyUserName(string UserName) 
+    {
+        int f_id = 0;
+        SqlParameter[] sp = new SqlParameter[1];
+        sp[0] = new SqlParameter("@UserName",UserName);
+        DataSet ds = datalayer.get_data("sp_getFacultyIDbyUserName", CommandType.StoredProcedure, sp);
+        return ds;
+        //if (ds.Tables[0].Rows.Count > 0) 
+        //{
+        //    f_id = Convert.ToInt32(ds.Tables[0].Rows[0]["Faculty_id"]);
+        //}
+        //return f_id;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+````````````````````````````````````````
+
+
+
+public DataSet GetStudentbyFacultyID(int fac_ID) 
+    {
+        SqlParameter[] sp = new SqlParameter[1];
+        sp[0] = new SqlParameter("@Faculty_ID", fac_ID);
+        return datalayer.get_data("sp_GetStudentbyFacultyID", CommandType.StoredProcedure, sp);
+    }
+
+    public int getFacultyIDbyUserName(string UserName) 
+    {
+        int f_id = 0;
+        SqlParameter[] sp = new SqlParameter[1];
+        sp[0] = new SqlParameter("@UserName",UserName);
+        DataSet ds = datalayer.get_data("sp_getFacultyIDbyUserName", CommandType.StoredProcedure, sp);
+        if (ds.Tables[0].Rows.Count > 0) 
+        {
+            f_id = Convert.ToInt32(ds.Tables[0].Rows[0]["Faculty_id"]);
+        }
+        return f_id;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+1111111111111111111111111111111111111111111111
+
+
+
+
+select Faculty_id from tblFaculty where Faculty_email_id = @UserName 
